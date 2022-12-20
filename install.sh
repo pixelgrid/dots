@@ -33,6 +33,9 @@ sudo chsh -s $(which zsh) $USER
 cp /tmp/dots/.zshrc $HOME/.zshrc
 cp /tmp/dots/.tmux.conf $HOME/.tmux.conf
 
+exec zsh
+source ~/.zshrc
+
 #asdf managed languages
 #nodejs
 nix-env -i gpgme gawk
