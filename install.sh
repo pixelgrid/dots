@@ -19,6 +19,7 @@ nix-env -iA nixpkgs.ripgrep
 nix-env -iA nixpkgs.bat
 nix-env -iA nixpkgs.direnv
 nix-env -iA nixpkgs.lazygit
+nix-env -iA nixpkgs.gcc
 
 # languages
 nix-env -iA nixpkgs.nodejs
