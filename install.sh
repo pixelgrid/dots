@@ -1,7 +1,10 @@
 #!/usr/bin/bash
 
+sudo mkdir /nix
+sudo chown $USER /nix
+
 #install nix
-curl -L https://nixos.org/nix/install | sh
+sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
 #packages
 nix-env -iA nixpkgs.zsh
