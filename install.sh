@@ -22,7 +22,7 @@ nix-env -iA nixpkgs.bat
 nix-env -iA nixpkgs.direnv
 nix-env -iA nixpkgs.lazygit
 
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 git clone https://github.com/pixelgrid/dots.git /tmp/dots
 
 #setup zsh as our shell
