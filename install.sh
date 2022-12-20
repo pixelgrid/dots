@@ -6,12 +6,13 @@ sudo chown $USER /nix
 #install nix
 sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
+ . $HOME/.nix-profile/etc/profile.d/nix.sh
+
 #packages
 nix-env -iA nixpkgs.zsh
 nix-env -iA nixpkgs.git
 nix-env -iA nixpkgs.neovim
 nix-env -iA nixpkgs.tmux
-nix-env -iA nixpkgs.stow
 nix-env -iA nixpkgs.yarn
 nix-env -iA nixpkgs.fzf
 nix-env -iA nixpkgs.ripgrep
