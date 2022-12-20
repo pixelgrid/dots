@@ -28,6 +28,8 @@ nix-env -iA nixpkgs.elixir
 # get the repo with my dotfiles
 git clone https://github.com/pixelgrid/dots.git /tmp/dots
 
+export PATH=$HOME/.nix-profile/bin:$PATH
+
 #setup zsh as our shell
 sudo chsh -s $(which zsh) $USER
 
