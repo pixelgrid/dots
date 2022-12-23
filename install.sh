@@ -47,3 +47,6 @@ cp /tmp/dots/.tmux.conf $HOME/.tmux.conf
 #neovim
 mkdir -p ~/.config/nvim
 cp /tmp/dots/init.lua $HOME/.config/nvim/
+
+# needed for nix-direnv setup
+echo "source \$HOME/.nix-profile/share/nix-direnv/direnvrc" > $HOME/.direnvrc
