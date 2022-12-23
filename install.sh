@@ -29,6 +29,7 @@ nix-env -iA nixpkgs.elixir
 
 # get the repo with my dotfiles
 git clone https://github.com/pixelgrid/dots.git /tmp/dots
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 #oh my tmux
 git clone https://github.com/gpakosz/.tmux.git /path/to/oh-my-tmux $HOME
