@@ -20,7 +20,7 @@ nix-env -iA nixpkgs.bat
 nix-env -iA nixpkgs.direnv
 nix-env -iA nixpkgs.lazygit
 nix-env -iA nixpkgs.gcc
-nix-env -iA nixpkgs.asdf
+nix-env -iA nixpkgs.nix-direnv
 
 # languages
 nix-env -iA nixpkgs.nodejs
