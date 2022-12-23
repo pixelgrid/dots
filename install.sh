@@ -30,6 +30,11 @@ nix-env -iA nixpkgs.elixir
 # get the repo with my dotfiles
 git clone https://github.com/pixelgrid/dots.git /tmp/dots
 
+#oh my tmux
+git clone https://github.com/gpakosz/.tmux.git /path/to/oh-my-tmux $HOME
+ln -s -f ~/.tmux.conf $HOME/.tmux.conf
+cp /tmp/dots/.tmux.conf.local $HOME
+
 export PATH=$HOME/.nix-profile/bin:$PATH
 
 #setup zsh as our shell
