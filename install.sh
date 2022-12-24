@@ -43,7 +43,6 @@ sudo chsh -s $(which zsh) $USER
 
 # run nix.sh on every shell init
 cp /tmp/dots/.zshrc $HOME/.zshrc
-cp /tmp/dots/.tmux.conf $HOME/.tmux.conf
 
 #neovim
 mkdir -p ~/.config/nvim
