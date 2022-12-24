@@ -29,9 +29,16 @@ nix-env -iA nixpkgs.elixir
 
 # get the repo with my dotfiles
 git clone https://github.com/pixelgrid/dots.git /tmp/dots
+
+# setup prezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
-#oh my tmux
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
+#setup oh my tmux
 git clone https://github.com/gpakosz/.tmux.git $HOME/.tmux
 ln -s -f $HOME/.tmux/.tmux.conf $HOME/.tmux.conf
 cp /tmp/dots/.tmux.conf.local $HOME/
