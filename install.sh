@@ -32,9 +32,9 @@ git clone https://github.com/pixelgrid/dots.git /tmp/dots
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
 #oh my tmux
-git clone https://github.com/gpakosz/.tmux.git $HOME
+git clone https://github.com/gpakosz/.tmux.git $HOME/.tmux
 ln -s -f $HOME/.tmux/.tmux.conf $HOME/.tmux.conf
-cp /tmp/dots/.tmux.conf.local $HOME
+cp /tmp/dots/.tmux.conf.local $HOME/
 
 export PATH=$HOME/.nix-profile/bin:$PATH
 
