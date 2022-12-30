@@ -21,6 +21,7 @@ nix-env -iA nixpkgs.direnv
 nix-env -iA nixpkgs.lazygit
 nix-env -iA nixpkgs.gcc
 nix-env -iA nixpkgs.nix-direnv
+nix-env -iA nixpkgs.fish
 
 # languages
 nix-env -iA nixpkgs.nodejs
@@ -30,14 +31,6 @@ nix-env -iA nixpkgs.elixir
 # get the repo with my dotfiles
 git clone https://github.com/pixelgrid/dots.git /tmp/dots
 
-# setup prezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-
 #setup oh my tmux
 git clone https://github.com/gpakosz/.tmux.git $HOME/.tmux
 ln -s -f $HOME/.tmux/.tmux.conf $HOME/.tmux.conf
@@ -46,10 +39,10 @@ cp /tmp/dots/.tmux.conf.local $HOME/
 export PATH=$HOME/.nix-profile/bin:$PATH
 
 #setup zsh as our shell
-sudo chsh -s $(which zsh) $USER
+sudo chsh -s $(which fish) $USER
 
 # run nix.sh on every shell init
-cp /tmp/dots/.zshrc $HOME/.zshrc
+# cp /tmp/dots/.zshrc $HOME/.zshrc
 
 #neovim
 mkdir -p ~/.config/nvim
