@@ -39,7 +39,6 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
--- vim.cmd [[colorscheme onedark]]
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -60,12 +59,12 @@ keyset('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keyset('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- center while moving
-keyset('n', 'n', "nzz", { expr = true, silent = true })
-keyset('n', 'N', "Nzz", { expr = true, silent = true })
-keyset('n', '#', "#zz", { expr = true, silent = true })
-keyset('n', '*', "*zz", { expr = true, silent = true })
+-- keyset('n', 'n', 'nzz', { expr = true, silent = true, noremap = true })
+-- keyset('n', 'N', 'Nzz', { expr = true, silent = true, noremap = true })
+-- keyset('n', '#', '#zz', { expr = true, silent = true, noremap = true })
+-- keyset('n', '*', "*zz", { expr = true, silent = true, noremap = true })
 -- copy to clipboard
-keyset('n', '<leader>y', "\"+yy", { expr = true, silent = true })
+keyset('n', '<leader>y', "\"+yy", { expr = true, silent = true, noremap = true  })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -89,6 +88,7 @@ require("lazy").setup({
 		"ibhagwan/fzf-lua",
 		config = function()
 			keyset('n', '<leader>s', "<cmd>lua require('fzf-lua').files()<CR>", { noremap = true, silent = true })
+			keyset('n', '<leader><leader>r', "<cmd>lua require('fzf-lua').registers()<CR>", { noremap = true, silent = true })
 		end
 	},
 	{
@@ -319,12 +319,17 @@ require("lazy").setup({
 		}
 	end
 },
-'navarasu/onedark.nvim', -- Theme inspired by Atom
 {
-  'projekt0n/github-nvim-theme',
-  config = function()
-    require('github-theme').setup()
-  end
+	'navarasu/onedark.nvim', -- Theme inspired by Atom
+	config = function()
+		vim.cmd [[colorscheme onedark]]
+	end
+},
+{
+	'projekt0n/github-nvim-theme',
+	config = function()
+		require('github-theme').setup()
+	end
 },
 {
 	'nvim-lualine/lualine.nvim',
@@ -357,5 +362,4 @@ require("lazy").setup({
 	end
 },
 'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
 })
