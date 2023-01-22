@@ -43,7 +43,20 @@ require('lazy').setup({
       -- Snippets
       {'L3MON4D3/LuaSnip'},             -- Required
       {'rafamadriz/friendly-snippets'}, -- Optional
-    }
+    },
+    config = function()
+      local lsp = require('lsp-zero')
+        lsp.preset('recommended')
+        -- (Optional) Configure lua language server for neovim
+        lsp.nvim_workspace()
+        lsp.ensure_installed({
+          -- Replace these with whatever servers you want to install
+          'tsserver',
+          'eslint',
+          'sumneko_lua',
+        })
+        lsp.setup()
+    end
   },
 
   { -- Highlight, edit, and navigate code
@@ -228,7 +241,6 @@ require('lazy').setup({
 	-- or leave it empty to use the default settings
 	-- refer to the configuration section below
       }
-      vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", {silent = true, noremap = true})
     end
   },
   {
